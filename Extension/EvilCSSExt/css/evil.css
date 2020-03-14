@@ -1,0 +1,14 @@
+body{
+    background-color: beige !important;
+}
+
+/*For Facebook*/
+.loggedout_menubar_container{
+    background-color: black !important;
+}
+
+
+/*For Twitter*/
+#react-root{
+    background-color: #141414;
+}

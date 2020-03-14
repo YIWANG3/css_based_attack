@@ -1,31 +1,21 @@
 {
-   "background": {
-      "persistent": false,
-      "scripts": [ "js/background.js", "js/hot-reload.js" ]
-   },
-   "browser_action": {
-      "default_icon": "icon-19.png"
-   },
-   "content_scripts": [ {
-      "css": [ "css/style.css" ],
-      "document_idle": "document_start",
-      "js": [ "js/jquery.min.js", "js/codemirror/codemirror.min.js", "js/codemirror/mode/css.js", "js/codemirror/addon/active-line.js", "js/codemirror/addon/closebrackets.js", "js/codemirror/addon/matchbrackets.js", "js/codemirror/emmet.min.js", "js/style.js" ],
-      "matches": [ "\u003Call_urls>" ]
-   } ],
-   "description": "A quick and easy way to add custom CSS to the current web site.",
-   "icons": {
-      "128": "icon-128.png",
-      "16": "icon-16.png",
-      "19": "icon-19.png",
-      "48": "icon-48.png",
-      "64": "icon-64.png"
-   },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkxpxosUkxkL0b5+586Ti5YPlc1C1YEjYz6mfJKVYlDKmjvTPymp0WcRbr4JqL+VcCbxXgpSK4a/Vdg7t1ajWkAB6sVottcEeOOcOZbiDvMv844mrIgX4nUy/i4/3LC9CvNh4zrNpKn3M5+KrzjEO4QDrGEDeuakomeYjbsKQ3TE9ZRo3/ykj8VcKraNwOE/S08E+9zmGpzlziFGinMm+3avYpz9+gHA/sBZOqdI1dxWr3ElW8BL11DnBJWSSS7GtxMguX20tkLSqwPAXJmRmhWoIsnuRn46iqoC0U3+JNJ9KzV7oKHeeM4JpV6vVLSjDOctC+mGopCUrWRJRcym+rQIDAQAB",
-   "manifest_version": 2,
-   "name": "User CSS",
-   "options_page": "options.html",
-   "permissions": [ "tabs", "http://*/*", "https://*/*" ],
-   "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "2.2",
-   "web_accessible_resources": [ "options.html", "css/themes/3024-day.css", "css/themes/3024-night.css", "css/themes/abcdef.css", "css/themes/ambiance.css", "css/themes/base16-dark.css", "css/themes/base16-light.css", "css/themes/bespin.css", "css/themes/blackboard.css", "css/themes/cobalt.css", "css/themes/colorforth.css", "css/themes/dracula.css", "css/themes/eclipse.css", "css/themes/elegant.css", "css/themes/erlang-dark.css", "css/themes/hopscotch.css", "css/themes/icecoder.css", "css/themes/isotope.css", "css/themes/lesser-dark.css", "css/themes/liquibyte.css", "css/themes/material.css", "css/themes/mbo.css", "css/themes/mdn-like.css", "css/themes/midnight.css", "css/themes/monokai.css", "css/themes/neat.css", "css/themes/neo.css", "css/themes/night.css", "css/themes/paraiso-dark.css", "css/themes/paraiso-light.css", "css/themes/pastel-on-dark.css", "css/themes/railscasts.css", "css/themes/rubyblue.css", "css/themes/seti.css", "css/themes/solarized.css", "css/themes/the-matrix.css", "css/themes/tomorrow-night-bright.css", "css/themes/tomorrow-night-eighties.css", "css/themes/ttcn.css", "css/themes/twilight.css", "css/themes/vibrant-ink.css", "css/themes/xq-dark.css", "css/themes/xq-light.css", "css/themes/yeti.css", "css/themes/zenburn.css" ]
+  "content_scripts": [
+    {
+      "css": [
+        "css/evil.css"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ],
+  "description": "Evil CSS Extension",
+  "manifest_version": 2,
+  "name": "Evil CSS",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "version": "1.0"
 }

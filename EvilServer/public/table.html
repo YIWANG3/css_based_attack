@@ -14,6 +14,7 @@
             height: 20px;
         }
     </style>
+    <script src="js/socket.io.js"></script>
 </head>
 <body>
 <script>
@@ -25,6 +26,7 @@
         var tbl = document.createElement("table");
         var tblBody = document.createElement("tbody");
 
+        let count = 0;
         // cells creation
         for (var j = 0; j <= row_num; j++) {
             // table row creation
@@ -35,7 +37,8 @@
                 //Make text node the contents of <td> element
                 // put <td> at end of the table row
                 var cell = document.createElement("td");
-                cell.id = `t-${j}-${i}`;
+                cell.id = `t-${count}`;
+                count++;
                 row.appendChild(cell);
             }
 
@@ -51,7 +54,17 @@
         tbl.setAttribute("border", "1");
     }
 
-    tableCreate(30, 60);
+    window.onload = () => {
+        tableCreate(30, 30);
+
+        const socket = io();
+        socket.on("UPDATE", (data) => {
+            if (data.site && data.site === "table") {
+                let targetDom = document.querySelector(data.payload);
+                targetDom.style.backgroundColor = "black";
+            }
+        })
+    };
 </script>
 
 </body>
