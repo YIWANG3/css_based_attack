@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function tableCreate(row_num, col_num) {
+        //body reference
+        var body = document.getElementsByTagName("body")[0];
+
+        // create elements <table> and a <tbody>
+        var tbl = document.createElement("table");
+        var tblBody = document.createElement("tbody");
+
+        // cells creation
+        for (var j = 0; j <= row_num; j++) {
+            // table row creation
+            var row = document.createElement("tr");
+
+            for (var i = 0; i < col_num; i++) {
+                // create element <td> and text node
+                //Make text node the contents of <td> element
+                // put <td> at end of the table row
+                var cell = document.createElement("td");
+                cell.id = `t-${j}-${i}`;
+                row.appendChild(cell);
+            }
+
+            //row added to end of table body
+            tblBody.appendChild(row);
+        }
+
+        // append the <tbody> inside the <table>
+        tbl.appendChild(tblBody);
+        // put <table> in the <body>
+        body.appendChild(tbl);
+        // tbl border attribute to
+        tbl.setAttribute("border", "1");
+    }
+
+    tableCreate(30, 60);
+</script>
+
+</body>
+</html>
