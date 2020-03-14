@@ -1,9 +1,23 @@
 ## Examples
-https://github.com/jbtronics/CrookedStyleSheets
-https://github.com/Bogdaan/spycss
+* [Stealing CSRF tokens with CSS injection (without iFrames)](https://github.com/dxa4481/cssInjection)
+* [CSS Inject](https://github.com/sym3tri/CSS-Inject)
+* [Crooked Style Sheets](https://github.com/jbtronics/CrookedStyleSheets)
+* [SpyCss](https://github.com/Bogdaan/spycss)
+* [CSS Keylogger](https://github.com/maxchehab/CSS-Keylogging)
 
 ## Articles
-Track Mouse Event
-https://www.digitalinformationworld.com/2019/05/security-researcher-way-to-track-web-visitors-mouse-movements-even-ad-blockers-and-disabling-javascript-not-work.html
-
-考虑用service worker 来拦截，过滤页面请求? No
+* [A Security Researcher Finds an Easy CSS Method to Track the Movement of the Mouse](https://www.digitalinformationworld.com/2019/05/security-researcher-way-to-track-web-visitors-mouse-movements-even-ad-blockers-and-disabling-javascript-not-work.html)
+* [How Private Data Can Be Stolen with a CSS Injection](https://www.netsparker.com/blog/web-security/private-data-stolen-exploiting-css-injection/)
+* [Stealing Data With CSS: Attack and Defense](https://www.mike-gualtieri.com/posts/stealing-data-with-css-attack-and-defense)
+* [Scriptless Attacks – Stealing the Pie Without Touching the Sill](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.469.7647&rep=rep1&type=pdf)
+* [Large-Scale Analysis of Style Injection by Relative Path Overwrite](https://arxiv.org/pdf/1811.00917.pdf)
+* [Client Side Injection on Web Applications](https://www.exploit-db.com/docs/english/45563-client-side-injection-on-web-applications.pdf)
+* [Protecting Browsers from Cross-Origin CSS Attacks](https://www.linshunghuang.com/papers/css.pdf)
+* [Cross-Origin CSS Attacks Revisited (feat. UTF-16)](https://blog.innerht.ml/cross-origin-css-attacks-revisited-feat-utf-16/)
+* [Evil CSS injection bug warning: Don't let hackers cross paths with your website](https://www.theregister.co.uk/2015/02/20/prssi_web_vuln/)
+* [CSS-Only Solution For UI Tracking](https://www.smashingmagazine.com/2014/10/css-only-solution-for-ui-tracking/)
+* [Researcher Finds CSS-Only Method to Track Mouse Movements](https://www.bleepingcomputer.com/news/security/researcher-finds-css-only-method-to-track-mouse-movements/)
+* [CSS-Only Event Tracking: GA Without the JS](https://www.periscopix.co.uk/blog/css-only-event-tracking/)
+* [CSS tracking trick can monitor your mouse without JavaScript](https://nakedsecurity.sophos.com/2019/05/09/css-tracking-trick-can-monitor-your-mouse-without-javascript/)
+* [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+* [Billion Laughs attack in SVG and XMP Metadata](https://phabricator.wikimedia.org/T85848)
