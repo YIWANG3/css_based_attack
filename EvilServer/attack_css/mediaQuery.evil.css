@@ -121,9 +121,31 @@ body::before {
 }
 
 /* Get Resolution of the Device */
+/* Device Resolution Reference: https://deviceatlas.com/blog/viewport-resolution-diagonal-screen-size-and-dpi-most-popular-smartphones */
 /* For Macbook Pro 15 inch 2019*/
 @media all and (resolution: 192dpi) {
     #dom-resolution {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=resolution&payload=192dpi");
+    }
+}
+
+/* XS(Max) */
+@media all and (resolution: 458dpi) {
+    #dom-resolution {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=resolution&payload=458dpi");
+    }
+}
+
+/* iPhone 8 */
+@media all and (resolution: 326dpi) {
+    #dom-resolution {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=resolution&payload=326dpi");
+    }
+}
+
+/* Galaxy S9 */
+@media all and (resolution: 568dpi) {
+    #dom-resolution {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=resolution&payload=568dpi");
     }
 }
