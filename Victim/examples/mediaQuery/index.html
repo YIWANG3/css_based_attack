@@ -25,6 +25,17 @@
             font-size: 18px;
             margin-bottom: 20px;
         }
+
+        .dom-listeners {
+            width: 800px;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .dom-for-css{
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 <body>
@@ -32,22 +43,26 @@
 <pre class="content" id="content"></pre>
 <script>
     document.getElementById("content").innerText = `
-    Example Code:
+Example Code:
 
-    @media ... {
-        some-dom {
-            background-image: url("http://localhost:3000/report?...");
-        }
+@media ... {
+    some-dom {
+        background-image: url("http://localhost:3000/report?...");
     }
+}
 
-    * Only a few element use background-image attribute, so we need many dom which can
-    set background-image to extract more device information
+* Only a few element use background-image attribute, so we need many dom which can
+set background-image to extract more device information
     `
 </script>
-<div id="dom-any-hover" class="dom-for-css">DOM for any-hover</div>
-<div id="dom-display-mode" class="dom-for-css">DOM for display-mode</div>
-<div id="dom-orientation" class="dom-for-css">DOM for orientation</div>
-
-
+<div class="dom-listeners">
+    <div id="dom-width" class="dom-for-css">DOM for width: Device Size</div>
+    <div id="dom-any-pointer" class="dom-for-css">DOM for any-pointer: Mobile or PC Browser</div>
+    <div id="dom-print" class="dom-for-css">DOM for print: If user print the page</div>
+    <div id="dom-any-hover" class="dom-for-css">DOM for any-hover: Mobile or PC Browser</div>
+    <div id="dom-display-mode" class="dom-for-css">DOM for display-mode: Fullscreen, browser...</div>
+    <div id="dom-orientation" class="dom-for-css">DOM for orientation: Mobile Device Orientation</div>
+    <div id="dom-resolution" class="dom-for-css">DOM for resolution: Device DPI</div>
+</div>
 </body>
 </html>

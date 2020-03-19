@@ -14,54 +14,116 @@ body::before {
 
 /* Get device resolution */
 @media all and (min-width: 1919px) {
-    body {
+    #dom-width {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=1920");
     }
 }
 
 @media all and (min-width: 1439px) and (max-width: 1919px) {
-    body {
+    #dom-width {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=1440");
     }
 }
 
 @media all and (min-width: 1365px) and (max-width: 1439px) {
-    body {
+    #dom-width {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=1366");
     }
 }
 
 @media all and (min-width: 374px) and (max-width: 376px) {
-    body {
+    #dom-width {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=375");
     }
 }
 
 @media all and (min-width: 359px) and (max-width: 361px) {
-    body {
+    #dom-width {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=360");
     }
 }
 
 /* Get device type: mobile phone, PC */
+@media all and (any-pointer: none) {
+    #dom-any-pointer {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=pointer&payload=none");
+    }
+}
+
 @media all and (any-pointer: fine) {
-    body:after {
-        content: "";
+    #dom-any-pointer {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=pointer&payload=fine");
     }
 }
 
 @media all and (any-pointer: coarse) {
-    body:after {
-        content: "";
+    #dom-any-pointer {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=pointer&payload=coarse");
     }
 }
 
 /* if user print this page */
 @media print {
-    html {
+    #dom-print {
         background-image: url("http://localhost:3000/report?site=mediaQuery&type=print&payload=print_action");
     }
 }
 
+/* Get device type: mobile phone, PC */
+@media all and (any-hover: none) {
+    #dom-any-hover {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=hover&payload=none");
+    }
+}
+
+@media all and (any-hover: hover) {
+    #dom-any-hover {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=hover&payload=hover");
+    }
+}
+
+/* Get display mode, most are for PWA */
+@media all and (display-mode: fullscreen) {
+    #dom-display-mode {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=display-mode&payload=fullscreen");
+    }
+}
+
+@media all and (display-mode: standalone) {
+    #dom-display-mode {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=display-mode&payload=standalone");
+    }
+}
+
+@media all and (display-mode: minimal-ui) {
+    #dom-display-mode {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=display-mode&payload=minimal-ui");
+    }
+}
+
+@media all and (display-mode: browser) {
+    #dom-display-mode {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=display-mode&payload=browser");
+    }
+}
+
+/* Get Orientation of the Device */
+@media all and (orientation: portrait) {
+    #dom-orientation {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=orientation&payload=portrait");
+    }
+}
+
+@media all and (orientation: landscape) {
+    #dom-orientation {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=orientation&payload=landscape");
+    }
+}
+
+/* Get Resolution of the Device */
+/* For Macbook Pro 15 inch 2019*/
+@media all and (resolution: 192dpi) {
+    #dom-resolution {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=resolution&payload=192dpi");
+    }
+}
