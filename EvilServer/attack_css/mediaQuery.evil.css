@@ -129,19 +129,7 @@ body::before {
     }
 }
 
-/* XS(Max) */
-@media all and (resolution: 458dpi) {
-    #dom-resolution {
-        background-image: url("http://localhost:3000/report?site=mediaQuery&type=resolution&payload=458dpi");
-    }
-}
-
-/* iPhone 8 */
-@media all and (resolution: 326dpi) {
-    #dom-resolution {
-        background-image: url("http://localhost:3000/report?site=mediaQuery&type=resolution&payload=326dpi");
-    }
-}
+/* In fact it doesn't support iOS device */
 
 /* Galaxy S9 */
 @media all and (resolution: 568dpi) {

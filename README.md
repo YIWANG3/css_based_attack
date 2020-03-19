@@ -33,3 +33,10 @@ open
 localhost/svg
 ``` 
 Then you can see this page is loading forever, until it corrupts.
+
+### 4. Media Query
+open
+```
+localhost/mediaQuery
+``` 
+Then you can see all information in EvilServer's log.
