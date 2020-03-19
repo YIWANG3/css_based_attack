@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Replay</title>
+    <script src="../js/socket.io.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", sans-serif;
+        }
+
+        .log {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.81);
+            color: white;
+            font-size: 12px;
+        }
+
+        .frame-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        #frame-site {
+            width: 100%;
+            border: 6px #676767 solid;
+            margin: 0 auto;
+            box-sizing: border-box;
+            height: 100%;
+        }
+
+        .__hover {
+            color: #ff0c52;
+        }
+
+        .__long-hover {
+            color: #ff6d1c;
+        }
+
+        .__active {
+            color: #44ff8a;
+        }
+
+        .__focus {
+            color: #ffe11d;
+        }
+    </style>
+</head>
+<body>
+<div class="frame-container">
+    <iframe id="frame-site" src="/amazon/index.html"></iframe>
+</div>
+<div class="log" id="log"></div>
+<script>
+    const convertTime = function (timestamp) {
+        let date = new Date(timestamp);
+        return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    };
+
+    const createCoverDom = function (text, boundingRect, type) {
+        let dom = document.createElement("div");
+        dom.innerText = text;
+        dom.style.width = boundingRect.width + "px";
+        dom.style.height = boundingRect.height + "px";
+        dom.style.left = boundingRect.left + "px";
+        dom.style.top = boundingRect.top + "px";
+        dom.className = `__cover __${type}`;
+        dom.id = Date.now().toString();
+        return dom;
+    };
+
+    const genLogDom = function (data) {
+        let str = `Type:${data.type}\tDom:${data.payload}\tTime:${convertTime(data.timestamp)}`;
+        if (data.anitime) {
+            str += `\tStay for:${data.anitime}s`;
+        }
+        str += '\n';
+        let dom = document.createElement("div");
+        dom.innerText = str;
+        dom.className = `__text __${data.type}`;
+        return dom;
+    };
+
+    window.onload = () => {
+        const iframeWindow = document.getElementById("frame-site").contentWindow;
+        const iframeDocument = iframeWindow.document;
+        const socket = io();
+        socket.on("UPDATE", (data) => {
+            if (data.site && data.site === "amazon") {
+                console.log(data);
+                document.getElementById("log").appendChild(genLogDom(data));
+                let targetDom = iframeDocument.querySelector(data.payload);
+                let bbox = targetDom.getBoundingClientRect();
+                let windowScrollY = iframeWindow.scrollY;
+                bbox.y += windowScrollY;
+                bbox.top += windowScrollY;
+                if (data.cover !== false) {
+                    iframeDocument.body.appendChild(createCoverDom(data.type, bbox, data.type));
+                    targetDom.scrollIntoView();
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

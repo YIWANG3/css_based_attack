@@ -1,0 +1,42 @@
+.__cover {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 999;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+
+.__hover {
+    padding-top: 8px;
+    border: 1px dashed #ff0c52;
+    color: #ff0c52;
+    background-color: rgba(255, 12, 82, 0.47);
+}
+
+.__long-hover {
+    padding-top: 48px;
+    border: 1px dashed #ff6d1c;
+    color: white;
+    background-color: rgba(255, 109, 28, 0.47);
+}
+
+.__active {
+    padding-top: 16px;
+    border: 1px dashed #44ff8a;
+    color: #44ff8a;
+    background-color: rgba(68, 255, 138, 0.47);
+}
+
+.__focus {
+    padding-top: 32px;
+    border: 1px dashed #ffe11d;
+    color: #ffe11d;
+    background-color: rgba(255, 225, 29, 0.47);
+}
+
+/*To fix the height when highlight this component*/
+#navbar[data-template=layoutSwapToolBar].layout2 #nav-search {
+    height: 70px !important;
+}

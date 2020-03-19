@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <link rel="stylesheet" href="/css/table.css" />
+    <script src="/js/table.js"></script>
+    <script src="../js/socket.io.js"></script>
+</head>
+<body>
+<script>
+    window.onload = () => {
+        tableCreate();
+
+        const socket = io();
+        socket.on("UPDATE", (data) => {
+            if (data.site && data.site === "table") {
+                let targetDom = document.querySelector(data.payload);
+                targetDom.style.backgroundColor = "#ffd901";
+            }
+        })
+    };
+</script>
+
+</body>
+</html>

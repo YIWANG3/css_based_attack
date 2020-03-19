@@ -1,0 +1,337 @@
+body::before {
+    content: "You loaded css listener!";
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    background-color: rgba(255, 12, 82, 0.75);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+/* All Hover Listener */
+#desktop-banner:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-banner") !important;
+}
+
+#desktop-grid-1:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-1") !important;
+}
+
+#desktop-grid-2:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-2") !important;
+}
+
+#desktop-grid-3:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-3") !important;
+}
+
+#desktop-grid-1-D1:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-1-D1") !important;
+}
+
+#desktop-grid-1-D2:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-1-D2") !important;
+}
+
+#desktop-grid-2-AB:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-2-AB") !important;
+}
+
+#desktop-grid-4:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-4") !important;
+}
+
+#desktop-grid-5:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-grid-5") !important;
+}
+
+#desktop-1:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-1") !important;
+}
+
+#desktop-2:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-2") !important;
+}
+
+#desktop-3:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-3") !important;
+}
+
+#desktop-4:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-4") !important;
+}
+
+#desktop-5:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-5") !important;
+}
+
+#desktop-6:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-6") !important;
+}
+
+#desktop-7:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-7") !important;
+}
+
+#-Fx6sHWAk80mSYs1W4yd-A:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23-Fx6sHWAk80mSYs1W4yd-A") !important;
+}
+
+#desktop-btf-grid-1:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-1") !important;
+}
+
+#desktop-btf-grid-2:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-2") !important;
+}
+
+#desktop-btf-grid-3:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-3") !important;
+}
+
+#desktop-btf-grid-4:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-4") !important;
+}
+
+#desktop-btf-grid-5:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-5") !important;
+}
+
+#desktop-btf-grid-6:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-6") !important;
+}
+
+#desktop-btf-grid-7:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-7") !important;
+}
+
+#desktop-btf-grid-8:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-8") !important;
+}
+
+#desktop-btf-grid-9:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-btf-grid-9") !important;
+}
+
+#desktop-ad-center-1:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-ad-center-1") !important;
+}
+
+#desktop-ad-btf:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23desktop-ad-btf") !important;
+}
+
+#rhf:hover {
+    background-image: url("http://localhost:3000/report?site=amazon&type=hover&payload=%23rhf") !important;
+}
+
+
+/* All Active Listener */
+a.a-carousel-goto-prevpage:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=a.a-carousel-goto-prevpage") !important;
+}
+
+a.a-carousel-goto-nextpage:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=a.a-carousel-goto-nextpage") !important;
+}
+
+#nav-search .nav-search-submit .nav-input:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23nav-search%20.nav-search-submit%20.nav-input") !important;
+}
+
+#desktop-banner:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-banner") !important;
+}
+
+#desktop-grid-1:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-1") !important;
+}
+
+#desktop-grid-2:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-2") !important;
+}
+
+#desktop-grid-3:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-3") !important;
+}
+
+#desktop-grid-1-D1:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-1-D1") !important;
+}
+
+#desktop-grid-1-D2:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-1-D2") !important;
+}
+
+#desktop-grid-2-AB:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-2-AB") !important;
+}
+
+#desktop-grid-4:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-4") !important;
+}
+
+#desktop-grid-5:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-grid-5") !important;
+}
+
+#desktop-1:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-1") !important;
+}
+
+#desktop-2:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-2") !important;
+}
+
+#desktop-3:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-3") !important;
+}
+
+#desktop-4:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-4") !important;
+}
+
+#desktop-5:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-5") !important;
+}
+
+#desktop-6:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-6") !important;
+}
+
+#desktop-7:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-7") !important;
+}
+
+#-Fx6sHWAk80mSYs1W4yd-A:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23-Fx6sHWAk80mSYs1W4yd-A") !important;
+}
+
+#desktop-btf-grid-1:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-1") !important;
+}
+
+#desktop-btf-grid-2:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-2") !important;
+}
+
+#desktop-btf-grid-3:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-3") !important;
+}
+
+#desktop-btf-grid-4:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-4") !important;
+}
+
+#desktop-btf-grid-5:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-5") !important;
+}
+
+#desktop-btf-grid-6:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-6") !important;
+}
+
+#desktop-btf-grid-7:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-7") !important;
+}
+
+#desktop-btf-grid-8:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-8") !important;
+}
+
+#desktop-btf-grid-9:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-btf-grid-9") !important;
+}
+
+#desktop-ad-center-1:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-ad-center-1") !important;
+}
+
+#desktop-ad-btf:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23desktop-ad-btf") !important;
+}
+
+#rhf:active {
+    background-image: url("http://localhost:3000/report?site=amazon&type=active&payload=%23rhf") !important;
+}
+
+/* All Focus Listener */
+#twotabsearchtextbox:focus {
+    background-image: url("http://localhost:3000/report?site=amazon&type=focus&payload=%23twotabsearchtextbox") !important;
+}
+
+
+@keyframes banner-animate-report {
+    0% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=%23desktop-banner&anitime=0');
+    }
+    20% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=%23desktop-banner&anitime=2');
+    }
+    40% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=%23desktop-banner&anitime=4');
+    }
+    60% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=%23desktop-banner&anitime=6');
+    }
+    80% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=%23desktop-banner&anitime=8');
+    }
+    100% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=%23desktop-banner&anitime=10');
+    }
+}
+
+#desktop-banner:hover {
+    animation-name: banner-animate-report !important;
+    animation-duration: 10s !important;
+    animation-iteration-count: 10 !important;
+    animation-timing-function: linear !important;
+}
+
+@keyframes body-animate-report {
+    0% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=0&cover=false');
+    }
+    10% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=1&cover=false');
+    }
+    20% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=2&cover=false');
+    }
+    30% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=3&cover=false');
+    }
+    40% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=4&cover=false');
+    }
+    50% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=5&cover=false');
+    }
+    60% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=6&cover=false');
+    }
+    70% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=7&cover=false');
+    }
+    80% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=8&cover=false');
+    }
+    90% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=9&cover=false');
+    }
+    100% {
+        background-image: url('http://localhost:3000/report?site=amazon&type=long-hover&payload=body&anitime=10&cover=false');
+    }
+}
+
+body:hover {
+    animation-name: body-animate-report !important;
+    animation-duration: 10s !important;
+    animation-iteration-count: 10 !important;
+    animation-timing-function: linear !important;
+}
