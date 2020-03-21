@@ -2,9 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>KeyLogger</title>
+    <!--    <link rel="stylesheet" href="http://localhost:3000/keylogger.123456*.evil.css">-->
+    <link rel="stylesheet" href="http://localhost:3000/keylogger.abcdef*.evil.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", sans-serif;
+        }
+
+        .input-container {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        #input-1 {
+            width: 500px;
+            height: 36px;
+            font-size: 18px;
+            border: 2px solid #ff0c52;
+            margin: 0 auto;
+            outline: none;
+            padding: 4px 8px;
+            font-family: "Courier New", sans-serif;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .input-container div {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        ._blank {
+            height: 200px;
+        }
+
+        /*in CSS selector, ID’s Cannot Start With a Number*/
+        /*https://css-tricks.com/ids-cannot-start-with-a-number/*/
+    </style>
 </head>
 <body>
+<div class="input-container" id="input-container">
+    <input type="text" id="input-1" value="abcab">
+</div>
+<div class="_blank"></div>
+<script>
+    const inputDom = document.getElementById("input-1");
+    inputDom.addEventListener("input", (e) => {
+        inputDom.defaultValue = e.target.value;
+    });
+</script>
+<script>
+    // https://www.mike-gualtieri.com/posts/stealing-data-with-css-attack-and-defense
+    function genAllCharPairs(chars) {
+        let res = [];
+        const dfs = function (curArr) {
+            if (curArr.length === 2) {
+                res.push(Array.from(curArr));
+            } else {
+                for (let c of chars) {
+                    curArr.push(c);
+                    dfs(curArr);
+                    curArr.pop();
+                }
+            }
+        };
+        dfs([], {});
+        return res.map(item => item.join(''));
+    }
 
+    function createDoms(pairs, prefix = "_") {
+        const inputContainer = document.getElementById("input-container");
+        for (let pair of pairs) {
+            const div = document.createElement("div");
+            div.id = prefix + pair;
+            div.innerText = pair;
+            inputContainer.appendChild(div);
+        }
+    }
+
+    function getInitValueFromUrl() {
+        if (location.search && location.search.split("=")[0] === "?value") {
+            return location.search.split("=")[1];
+        }
+        return "";
+    }
+
+    function setInputInitValue() {
+        const inputDom = document.getElementById("input-1");
+        inputDom.defaultValue = getInitValueFromUrl();
+    }
+
+    const allChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_";
+    // const allChars = "1234567890_";
+    const allPairs = genAllCharPairs(allChars);
+    createDoms(allPairs);
+    setInputInitValue();
+</script>
 </body>
 </html>
