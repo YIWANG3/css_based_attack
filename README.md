@@ -15,7 +15,7 @@ Victim Server will start at localhost:80
 Open two tabs: 
 ```
 localhost/table    // Victim's website
-localhost/table/track.html   // Track Victim's mouse position
+localhost:3000/table/track.html   // Track Victim's mouse position
 ```
 Then you can see all you mouse path show on another window.
 
@@ -23,7 +23,7 @@ Then you can see all you mouse path show on another window.
 Open two tabs: 
 ```
 localhost/amazon   // Victim's website
-localhost/amazon/track.html   // Track the hover, click action of Victim's website
+localhost:3000/amazon/track.html   // Track the hover, click action of Victim's website
 ```
 Then you can see hover, click event show on another window.
 
@@ -40,3 +40,17 @@ open
 localhost/mediaQuery
 ``` 
 Then you can see all information in EvilServer's log.
+
+### 5. KeyLogger
+open
+```
+localhost/keylogger/    // Victim's website
+localhost:3000/keylogger/track.html   // See user's input
+```
+
+### 6. KeyLogger with Font Face
+open
+```
+localhost/keylogger_font/    // Victim's website
+localhost:3000/keylogger_font/track.html   // See user's input
+```
