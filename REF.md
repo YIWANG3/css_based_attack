@@ -4,6 +4,7 @@
 * [Crooked Style Sheets](https://github.com/jbtronics/CrookedStyleSheets)
 * [SpyCss](https://github.com/Bogdaan/spycss)
 * [CSS Keylogger](https://github.com/maxchehab/CSS-Keylogging)
+* [maxchehab/CSS-Keylogging](https://github.com/maxchehab/CSS-Keylogging)
 
 ## Articles
 * [A Security Researcher Finds an Easy CSS Method to Track the Movement of the Mouse](https://www.digitalinformationworld.com/2019/05/security-researcher-way-to-track-web-visitors-mouse-movements-even-ad-blockers-and-disabling-javascript-not-work.html)
@@ -22,3 +23,5 @@
 * [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 * [Billion Laughs attack in SVG and XMP Metadata](https://phabricator.wikimedia.org/T85848)
 * [CSS keylogger：攻击与防御](https://blog.csdn.net/weixin_34138139/article/details/88018356)
+* [Show HN: A CSS Keylogger (github.com)](https://news.ycombinator.com/item?id=16422696)
+* [List of Unicode characters](https://en.wikipedia.org/wiki/List_of_Unicode_characters)

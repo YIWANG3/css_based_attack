@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>KeyLogger</title>
+    <script src="../js/socket.io.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", sans-serif;
+            font-size: 14px;
+        }
+
+        .title {
+            margin-top: 100px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #logged-keys, .rebuild-result {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #logged-keys div {
+            display: inline-block;
+            margin-right: 12px;
+        }
+
+        ._blank {
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
+<div class="title">Logged Keys</div>
+<div class="logged-keys" id="logged-keys"></div>
+<div class="title">Rebuild Result</div>
+<div class="rebuild-result" id="rebuild-result"></div>
+<div class="_blank"></div>
+<script>
+    const logs = [];
 
+    function createDom(keyValue, prefix = "_") {
+        let div = document.createElement("div");
+        div.innerText = keyValue;
+        div.id = prefix + keyValue;
+        document.getElementById("logged-keys").appendChild(div);
+    }
+
+    function updateRebuildResult(newLog) {
+        let rebuildResultDom = document.getElementById("rebuild-result");
+        rebuildResultDom.innerText += newLog.keys;
+    }
+
+    window.onload = () => {
+        const socket = io();
+        socket.on("UPDATE", (data) => {
+            if (data.site && data.site === "keylogger.font") {
+                createDom(data.payload);
+                logs.push({keys: data.payload, time: data.timestamp});
+                updateRebuildResult({keys: data.payload, time: data.timestamp});
+            }
+        })
+    };
+</script>
 </body>
 </html>

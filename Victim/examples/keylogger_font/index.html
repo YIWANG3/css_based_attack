@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>KeyLogger WebFont</title>
+    <link rel="stylesheet" href="http://localhost:3000/keylogger.font.evil.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", sans-serif;
+        }
+
+        .input-container {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        #input-1 {
+            width: 500px;
+            height: 36px;
+            font-size: 18px;
+            border: 2px solid #ff0c52;
+            margin: 0 auto;
+            outline: none;
+            padding: 4px 8px;
+            font-family: "Courier New", sans-serif;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .input-container div {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        ._blank {
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
+<div class="input-container" id="input-container">
+    <input type="text" id="input-1">
+</div>
+<div class="_blank"></div>
+<script>
+    function getInitValueFromUrl() {
+        if (location.search && location.search.split("=")[0] === "?value") {
+            return location.search.split("=")[1];
+        }
+        return "";
+    }
 
+    function setInputInitValue() {
+        const inputDom = document.getElementById("input-1");
+        inputDom.defaultValue = getInitValueFromUrl();
+    }
+
+    setInputInitValue();
+</script>
 </body>
 </html>
