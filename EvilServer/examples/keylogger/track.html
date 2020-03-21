@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KeyLogger</title>
+    <script src="../js/socket.io.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", sans-serif;
+        }
+
+        .title {
+            margin-top: 100px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #logged-keys, .rebuild-result {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #logged-keys div {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        ._blank {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="title">Logged Keys</div>
+<div class="logged-keys" id="logged-keys"></div>
+<div class="title">Rebuild Result</div>
+<div class="rebuild-result" id="rebuild-result"></div>
+<div class="_blank"></div>
+<script>
+    const logs = [];
+
+    function createDom(keyValue, prefix = "_") {
+        let div = document.createElement("div");
+        div.innerText = keyValue;
+        div.id = prefix + keyValue;
+        document.getElementById("logged-keys").appendChild(div);
+    }
+
+    function countDash(logs) {
+        let count = 0;
+        for (let log of logs) {
+            if (log.keys.indexOf("_") >= 0) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    function findStartIndex(logs) {
+        let pattern;
+        for (let i = 0; i < logs.length; i++) {
+            if (logs[i].keys.indexOf("_") === logs[i].keys.length - 1) {
+                pattern = logs[i];
+            }
+        }
+        for (let i = 0; i < logs.length; i++) {
+            if (pattern.keys[0] === logs[i].keys[0] && logs[i].keys.indexOf("_") < 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function getNext(cur, logs, visited) {
+        for (let log of logs) {
+            if (cur.keys[1] === log.keys[0] && !visited.has(log)) {
+                visited.add(log);
+                return log;
+            }
+        }
+        return null;
+    }
+
+    function rebuild(logs) {
+        let startIndex = findStartIndex(logs);
+        let visited = new Set();
+        let sequence = [];
+        let cur = logs[startIndex];
+        while (cur) {
+            sequence.push(cur);
+            cur = getNext(cur, logs, visited);
+        }
+        let result = "";
+        for (let i = 0; i < sequence.length; i++) {
+            result += sequence[i].keys[0];
+            if (i === sequence.length - 1) {
+                result += sequence[i].keys[1];
+            }
+        }
+        return result;
+    }
+
+    function updateRebuildResult(newLog) {
+        let rebuildResultDom = document.getElementById("rebuild-result");
+        let numDash = countDash(logs);
+        if (numDash === 2) { // No typing to trigger more logs
+            rebuildResultDom.innerText = rebuild(logs);
+        } else if (numDash > 2) {
+            if (newLog.keys.indexOf("_") > -1) {
+                rebuildResultDom.innerText += newLog.keys[1];
+            }
+        } else {
+            rebuildResultDom.innerText = "Unable to rebuild string";
+        }
+    }
+
+    window.onload = () => {
+        const socket = io();
+        socket.on("UPDATE", (data) => {
+            if (data.site && data.site === "keylogger") {
+                createDom(data.payload);
+                logs.push({keys: data.payload, time: data.timestamp});
+                updateRebuildResult({keys: data.payload, time: data.timestamp});
+            }
+        })
+    };
+</script>
+
+</body>
+</html>
