@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["cL5wA"]); }
+
+__d("useSinglePartialViewImpression",["React","usePartialViewImpression"],(function(a,b,c,d,e,f){"use strict";a=b("React");var g=a.useCallback,h=a.useRef;c=function(a){var c=a.onImpressionEnd,d=a.onImpressionStart,e=h(!1),f=h(!1);a=g(function(a){if(f.current===!0)return;c&&c(a);f.current=!0},[c]);var i=g(function(a){if(e.current===!0)return;d&&d(a);e.current=!0},[d]);return b("usePartialViewImpression")({onImpressionEnd:a,onImpressionStart:i})};e.exports=c}),null);

