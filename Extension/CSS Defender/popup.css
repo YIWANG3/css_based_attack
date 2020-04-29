@@ -1,0 +1,27 @@
+body {
+  cursor: default;
+  padding: 0;
+  min-width: 14em;
+}
+
+h1 {
+  user-select: none;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 1.5em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.info-container{
+  text-align: center;
+}
+
+.plugin-icon{
+  width: 40px;
+  height: 40px;
+}
+
+.enable-container{
+  text-align: center;
+}
