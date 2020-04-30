@@ -197,28 +197,12 @@ function parseCSSRules(rules) {
             // 2) Calls a remote URL (https, http, //)
             // 3) The URL is not an xmlns property
             // TODO: Add more rules!!!
-            if (((selectorText != null) && (cssText != null) && ((cssText.indexOf('url') !== -1) &&
+            if (((cssText != null) && ((cssText.indexOf('url') !== -1) &&
                     ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
                     (cssText.indexOf("xmlns='http://") === -1) && (cssText.indexOf('?') !== -1 && cssText.indexOf('=') !== -1)
                 )
             )) {
-                selectors.push(rules[r].selectorText);
-                selectorcss.push(cssText);
-            } else if(rules[r].cssRules){
-                if (((rules[r].cssRules[0].selectorText != null) && (cssText != null)) &&
-                ((cssText.indexOf('url') !== -1) &&
-                    ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
-                    (cssText.indexOf("xmlns='http://") === -1)
-                )
-            ) {
-                selectors.push(rules[r].cssRules[0].selectorText);
-                selectorcss.push(cssText);
-            }
-            } else if(((selectorText != null) && (cssText != null) &&((selectorText.indexOf('hover') !== -1)||(selectorText.indexOf('active') !== -1)) ) &&
-            ((cssText.indexOf('url') !== -1) &&
-                ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
-                (cssText.indexOf("xmlns='http://") === -1)
-            )){
+                console.log('Hit:', rules[r].selectorText);
                 selectors.push(rules[r].selectorText);
                 selectorcss.push(cssText);
             }
@@ -394,7 +378,7 @@ function getCrossDomainCSS(orig_sheet) {
 function filter_css(selectors, selectorcss) {
     // Loop through found selectors and modify CSS if necessary
     for (s in selectors) {
-        console.log(selectors[s],'||||||',selectorcss[s])
+        console.log(selectors[s], '||||||', selectorcss[s])
         if (selectorcss[s].indexOf('background') !== -1) {
             filter_sheet.sheet.insertRule(selectors[s] + " { background-image:none !important; }", filter_sheet.sheet.cssRules.length);
         }
