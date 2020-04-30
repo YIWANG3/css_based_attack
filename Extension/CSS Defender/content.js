@@ -227,7 +227,7 @@ function parseCSSRules(rules) {
                 selectors.push(rules[r].cssRules[0].selectorText);
                 selectorcss.push(cssText);
             }
-            } else if(((selectorText != null) && (cssText != null) &&((selectorText.indexOf('hover') !== -1)||(selectorText.indexOf('active') !== -1)) ) &&
+            } else if(((cssText != null) ) &&
             ((cssText.indexOf('url') !== -1) &&
                 ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
                 (cssText.indexOf("xmlns='http://") === -1)
