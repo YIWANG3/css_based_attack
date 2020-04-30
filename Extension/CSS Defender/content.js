@@ -1,4 +1,3 @@
-
 // Only scan single stylesheet
 function scan_css_single(css_stylesheet) {
     // Create new filter sheet to ensure styles are overwritten
@@ -18,8 +17,7 @@ function scan_css_single(css_stylesheet) {
         //console.log("Cross domain stylesheet: "+ css_stylesheet.href);
         incrementSanitize();
         getCrossDomainCSS(css_stylesheet);
-    }
-    else {
+    } else {
         incrementSanitize();
         handleImportedCSS(rules);
 
@@ -35,7 +33,6 @@ function scan_css_single(css_stylesheet) {
         decrementSanitize();
     }
 }
-
 
 
 // Scan all document stylesheets
@@ -71,8 +68,7 @@ function scan_css() {
                     if (rules == null) {
                         //console.log("Rechecking for rules...");
                         setTimeout(checkRulesInit2, 1000);
-                    }
-                    else {
+                    } else {
                         incrementSanitize();
                         handleImportedCSS(rules);
 
@@ -88,8 +84,7 @@ function scan_css() {
                         decrementSanitize();
                     }
                 }, 1000);
-            }
-            else {
+            } else {
                 // Retrieve and parse cross domain stylesheet
                 console.log("Cross domain stylesheet: " + sheets[i].href);
                 incrementSanitize();
@@ -97,8 +92,7 @@ function scan_css() {
             }
 
 
-        }
-        else {
+        } else {
             incrementSanitize();
             handleImportedCSS(rules);
 
@@ -115,7 +109,6 @@ function scan_css() {
         }
     }
 }
-
 
 
 function handleImportedCSS(rules) {
@@ -144,24 +137,20 @@ function handleImportedCSS(rules) {
                     */
 
                     getCrossDomainCSS(rules[r].styleSheet);
-                }
-                else {
+                } else {
                     // Parse imported DOM sheet
                     //console.log("Imported DOM CSS...");
                     var _selectors = parseCSSRules(_rules);
                     filter_css(_selectors[0], _selectors[1]);
                     decrementSanitize();
                 }
-            }
-            else {
+            } else {
                 // imported rules must always come first so end the loop if we see a non-import rule
                 r = rules.length;
             }
         }
     }
 }
-
-
 
 
 function getCSSRules(_sheet) {
@@ -171,8 +160,7 @@ function getCSSRules(_sheet) {
         //Loading CSS
         //console.log("Loading CSS...");
         rules = _sheet.rules || _sheet.cssRules;
-    }
-    catch (e) {
+    } catch (e) {
         if (e.name !== "SecurityError") {
             //console.log("Error loading rules:");
             //console.log(e);
@@ -205,16 +193,15 @@ function parseCSSRules(rules) {
 
             // If CSS selector is parsing text and is loading a remote resource add to our blocking queue
             // Flag rules that:
-            // 1) Match a value attribute selector which appears to be parsing text 
+            // 1) Match a value attribute selector which appears to be parsing text
             // 2) Calls a remote URL (https, http, //)
             // 3) The URL is not an xmlns property
             // TODO: Add more rules!!!
-            if (((selectorText != null) && (cssText != null) &&(selectorText.indexOf('value') !== -1) && (selectorText.indexOf('=') !== -1)) &&
-                ((cssText.indexOf('url') !== -1) &&
+            if (((selectorText != null) && (cssText != null) && ((cssText.indexOf('url') !== -1) &&
                     ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
-                    (cssText.indexOf("xmlns='http://") === -1)
+                    (cssText.indexOf("xmlns='http://") === -1) && (cssText.indexOf('?') !== -1 && cssText.indexOf('=') !== -1)
                 )
-            ) {
+            )) {
                 selectors.push(rules[r].selectorText);
                 selectorcss.push(cssText);
             }
@@ -236,8 +223,6 @@ function parseCSSRules(rules) {
 }
 
 
-
-
 function getCrossDomainCSS(orig_sheet) {
     if (orig_sheet == null) {
         decrementSanitize();
@@ -250,8 +235,7 @@ function getCrossDomainCSS(orig_sheet) {
     if (url != null) {
         if (seen_url.indexOf(url) === -1) {
             seen_url.push(url);
-        }
-        else {
+        } else {
             //console.log("Already checked URL");
             decrementSanitize();
             return;
@@ -312,7 +296,7 @@ function getCrossDomainCSS(orig_sheet) {
             document.head.appendChild(sheet);
 
 
-            // MG: this approach to retrieve the last inserted stylesheet sometimes fails, 
+            // MG: this approach to retrieve the last inserted stylesheet sometimes fails,
             // instead get the stylesheet directly from the temporary object (sheet.sheet)
             //var sheets = document.styleSheets;
             //rules = getCSSRules(sheets[ sheets.length - 1]);
@@ -328,19 +312,19 @@ function getCrossDomainCSS(orig_sheet) {
             sheet.disabled = true;
             sheet.parentNode.removeChild(sheet);
 
-            
+
             if(checkCSSDisabled(orig_sheet))
             {
                 enableCSS(orig_sheet);
             }
 
             decrementSanitize();
-            
+
             return rules;
             */
 
 
-            // if rules is null is likely means we triggered a 
+            // if rules is null is likely means we triggered a
             // timing error where the new CSS sheet isn't ready yet
             if (rules == null) {
                 // Keep checking every 10ms until rules have become available
@@ -350,8 +334,7 @@ function getCrossDomainCSS(orig_sheet) {
 
                     if (rules == null) {
                         setTimeout(checkRulesInit, 10);
-                    }
-                    else {
+                    } else {
                         handleImportedCSS(rules);
 
                         var _selectors = parseCSSRules(rules);
@@ -369,8 +352,7 @@ function getCrossDomainCSS(orig_sheet) {
                     }
 
                 }, 10);
-            }
-            else {
+            } else {
                 handleImportedCSS(rules);
                 console.log("Checking CSS")
                 var _selectors = parseCSSRules(rules);
@@ -390,7 +372,6 @@ function getCrossDomainCSS(orig_sheet) {
     }
     xhr.send();
 }
-
 
 
 function filter_css(selectors, selectorcss) {
@@ -420,11 +401,11 @@ function filter_css(selectors, selectorcss) {
 }
 
 
-
 function disableCSS(_sheet) {
     //console.log("Disabled CSS: "+ _sheet.href);
     _sheet.disabled = true;
 }
+
 function enableCSS(_sheet) {
     //console.log("Enabled CSS: "+ _sheet.href);
 
@@ -436,9 +417,11 @@ function enableCSS(_sheet) {
         window.dispatchEvent(new Event('resize'));
     }
 }
+
 function checkCSSDisabled(_sheet) {
     return _sheet.disabled;
 }
+
 function disableAndRemoveCSS(_sheet) {
     _sheet.disabled = true;
     if (_sheet.parentNode != null) {
@@ -451,6 +434,7 @@ function incrementSanitize() {
     sanitize_inc++;
     //console.log("Increment: "+ sanitize_inc);
 }
+
 function decrementSanitize() {
     sanitize_inc--;
     if (sanitize_inc <= 0) {
@@ -465,7 +449,6 @@ function buildContentLoadBlockerCSS() {
 }
 
 
-
 /*
  *  Initialize
  */
@@ -477,7 +460,6 @@ var block_count = 0;      // Number of blocked CSSRules
 var seen_url = [];     // Keep track of scanned cross-domain URL's
 var seen_hash = {};
 var disabled_css_hash = {};     // Keep track if the CSS was disabled before sanitization
-
 
 
 // Create an observer instance to monitor CSS injection
@@ -518,7 +500,7 @@ var observer = new MutationObserver(function (mutations) {
 
 
                 /*
-                if( 
+                if(
                     ((mutation.addedNodes.length > 0) && (mutation.addedNodes[0].localName == "style")) ||
                     ((mutation.addedNodes.length > 0) && (mutation.addedNodes[0].localName == "link"))
                   )
@@ -558,8 +540,7 @@ var observer = new MutationObserver(function (mutations) {
                         //console.log(mutation);
                         scan_css_single(document.styleSheets[document.styleSheets.length - 1]);
                         //scan_css_single( mutation.addedNodes[0].sheet );
-                    }
-                    else {
+                    } else {
                         //console.log("Scan mutation...");
                     }
                     //console.log("--here2--");
@@ -570,10 +551,13 @@ var observer = new MutationObserver(function (mutations) {
 });
 
 // configuration of the observer:
-var observer_config = { attributes: true, childList: true, subtree: true, characterData: true, attributeFilter: ["style", "link"] }
-
-
-
+var observer_config = {
+    attributes: true,
+    childList: true,
+    subtree: true,
+    characterData: true,
+    attributeFilter: ["style", "link"]
+}
 
 
 // Run as soon as the DOM has been loaded
@@ -620,8 +604,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
             // ensure icon is enabled
             chrome.runtime.sendMessage('enabled');
-        }
-        else {
+        } else {
             //console.log("Disabling CSS Exfil Protection");
             css_load_blocker.disabled = true;
             css_load_blocker.parentNode.removeChild(css_load_blocker);
@@ -633,7 +616,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
 }, false);
-
 
 
 window.addEventListener("load", function () {
