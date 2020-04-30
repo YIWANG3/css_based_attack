@@ -217,6 +217,23 @@ function parseCSSRules(rules) {
             ) {
                 selectors.push(rules[r].selectorText);
                 selectorcss.push(cssText);
+            } else if(rules[r].cssRules){
+                if (((rules[r].cssRules[0].selectorText != null) && (cssText != null)) &&
+                ((cssText.indexOf('url') !== -1) &&
+                    ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
+                    (cssText.indexOf("xmlns='http://") === -1)
+                )
+            ) {
+                selectors.push(rules[r].cssRules[0].selectorText);
+                selectorcss.push(cssText);
+            }
+            } else if(((selectorText != null) && (cssText != null) &&((selectorText.indexOf('hover') !== -1)||(selectorText.indexOf('active') !== -1)) ) &&
+            ((cssText.indexOf('url') !== -1) &&
+                ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
+                (cssText.indexOf("xmlns='http://") === -1)
+            )){
+                selectors.push(rules[r].selectorText);
+                selectorcss.push(cssText);
             }
 
         }
@@ -396,7 +413,7 @@ function getCrossDomainCSS(orig_sheet) {
 function filter_css(selectors, selectorcss) {
     // Loop through found selectors and modify CSS if necessary
     for (s in selectors) {
-        console.log(selectorcss[s])
+        console.log(selectors[s],'||||||',selectorcss[s])
         if (selectorcss[s].indexOf('background') !== -1) {
             filter_sheet.sheet.insertRule(selectors[s] + " { background-image:none !important; }", filter_sheet.sheet.cssRules.length);
         }
@@ -409,11 +426,11 @@ function filter_css(selectors, selectorcss) {
         if (selectorcss[s].indexOf('content') !== -1) {
             filter_sheet.sheet.insertRule(selectors[s] + " { content: normal !important; }", filter_sheet.sheet.cssRules.length);
         }
-
         // Causes performance issue if large amounts of resources are blocked, just use when debugging
         //console.log("CSS Exfil Protection blocked: "+ selectors[s]);
 
         // Update background.js with bagde count
+        console.log(filter_sheet.sheet)
         block_count++;
     }
     chrome.extension.sendMessage(block_count.toString());
