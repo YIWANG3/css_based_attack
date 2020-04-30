@@ -197,25 +197,15 @@ function parseCSSRules(rules) {
             // 2) Calls a remote URL (https, http, //)
             // 3) The URL is not an xmlns property
             // TODO: Add more rules!!!
-            console.log("Selector and css");
-            console.log(selectorText);
-            console.log(cssText);
-            if (cssText && rules[r].media) {
-                console.log("Media");
-                console.log(rules[r].cssRules);
-            }
-
-            if (((selectorText != null) && (cssText != null)) &&
-                ((cssText.indexOf('url') !== -1) &&
+            if (((cssText != null) && ((cssText.indexOf('url') !== -1) &&
                     ((cssText.indexOf('https://') !== -1) || (cssText.indexOf('http://') !== -1) || (cssText.indexOf('//') !== -1)) &&
-                    (cssText.indexOf("xmlns='http://") === -1)
+                    (cssText.indexOf("xmlns='http://") === -1) && (cssText.indexOf('?') !== -1 && cssText.indexOf('=') !== -1)
                 )
-            ) {
-                console.log("hit:", rules[r].selectorText);
+            )) {
+                console.log('Hit:', rules[r].selectorText);
                 selectors.push(rules[r].selectorText);
                 selectorcss.push(cssText);
             }
-
         }
 
     }
