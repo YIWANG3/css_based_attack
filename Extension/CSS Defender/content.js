@@ -172,6 +172,25 @@ function getCSSRules(_sheet) {
     return rules;
 }
 
+function getSelectorfromCssText(cssText)
+{
+    if(cssText != null)
+    {               
+         //get selector from cssText
+        let idx = cssText.indexOf('{');
+        if(idx !== -1) {
+            return cssText.substring(0,idx);
+        }
+        else {
+            console.log("Invalid cssText!");
+            return null;
+        }
+    }
+    else {
+        console.log("nope Empty CSSText");
+        return null;
+    }
+}
 
 function parseCSSRules(rules) {
     console.log("Parsing...", rules);
@@ -181,15 +200,27 @@ function parseCSSRules(rules) {
     if (rules != null) {
         // Loop through all selectors and determine if any are looking for the value attribute and calling a remote URL
         for (r = 0; r < rules.length; r++) {
+            var cssText = null;
+            if (rules[r].cssText != null) {
+                cssText = rules[r].cssText.toLowerCase();
+            }
+            else {
+                console.log("Cannot Obtain cssText");
+            }
+
             var selectorText = null;
             if (rules[r].selectorText != null) {
                 selectorText = rules[r].selectorText.toLowerCase();
             }
 
-            var cssText = null;
-            if (rules[r].cssText != null) {
-                cssText = rules[r].cssText.toLowerCase();
+            //Deal with media query specifically
+            if(selectorText == null && cssText !== null && cssText.indexOf('media') !== -1)
+            {
+                selectorText = getSelectorfromCssText(rules[r].cssRules[0].cssText);
+                //console.log("Obtained selectorText:" + selectorText);
             }
+
+
 
             // If CSS selector is parsing text and is loading a remote resource add to our blocking queue
             // Flag rules that:
@@ -202,8 +233,8 @@ function parseCSSRules(rules) {
                     (cssText.indexOf("xmlns='http://") === -1) && (cssText.indexOf('?') !== -1 && cssText.indexOf('=') !== -1)
                 )
             )) {
-                console.log('Hit:', rules[r].selectorText);
-                selectors.push(rules[r].selectorText);
+                console.log('Hit:', selectorText);
+                selectors.push(selectorText);
                 selectorcss.push(cssText);
             }
         }
@@ -222,6 +253,10 @@ function parseCSSRules(rules) {
     return [selectors, selectorcss];
 }
 
+function constructorNewRuleWithCSSText(cssText,modifiedAttribute,newRule) {
+    const regex = new RegExp(modifiedAttribute + ".*;");
+    return cssText.replace(regex,newRule);
+}
 
 function getCrossDomainCSS(orig_sheet) {
     if (orig_sheet == null) {
@@ -379,18 +414,22 @@ function getCrossDomainCSS(orig_sheet) {
 function filter_css(selectors, selectorcss) {
     // Loop through found selectors and modify CSS if necessary
     for (s in selectors) {
-        console.log("selectorcss[s]", selectorcss[s])
+        //console.log("selectorcss[s]", selectorcss[s])
         if (selectorcss[s].indexOf('background') !== -1) {
-            filter_sheet.sheet.insertRule(selectors[s] + " { background-image:none !important; }", filter_sheet.sheet.cssRules.length);
+            let newRule = constructorNewRuleWithCSSText(selectorcss[s],"background-image","background-image:none !important;");
+            filter_sheet.sheet.insertRule(newRule, filter_sheet.sheet.cssRules.length);
         }
         if (selectorcss[s].indexOf('list-style') !== -1) {
-            filter_sheet.sheet.insertRule(selectors[s] + " { list-style: inherit !important; }", filter_sheet.sheet.cssRules.length);
+            let newRule = constructorNewRuleWithCSSText(selectorcss[s],"list-style","{ list-style: inherit !important; }");
+            filter_sheet.sheet.insertRule(newRule, filter_sheet.sheet.cssRules.length);
         }
         if (selectorcss[s].indexOf('cursor') !== -1) {
-            filter_sheet.sheet.insertRule(selectors[s] + " { cursor: auto !important; }", filter_sheet.sheet.cssRules.length);
+            let newRule = constructorNewRuleWithCSSText(selectorcss[s],"cursor","{ cursor: auto !important; }}");
+            filter_sheet.sheet.insertRule(newRule, filter_sheet.sheet.cssRules.length);
         }
         if (selectorcss[s].indexOf('content') !== -1) {
-            filter_sheet.sheet.insertRule(selectors[s] + " { content: normal !important; }", filter_sheet.sheet.cssRules.length);
+            let newRule = constructorNewRuleWithCSSText(selectorcss[s],"content","{ content: normal !important; }");
+            filter_sheet.sheet.insertRule(newRule, filter_sheet.sheet.cssRules.length);
         }
 
         // Causes performance issue if large amounts of resources are blocked, just use when debugging
